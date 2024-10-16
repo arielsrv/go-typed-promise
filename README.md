@@ -1,6 +1,6 @@
 # go-typed-promise
 
-An experimental type-safe generic promise library for Go 1.19.
+An experimental type-safe generic promise library for Go 1.23.2.
 
 ## Why?
 
