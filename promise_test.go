@@ -3,10 +3,11 @@ package promise
 import (
 	"context"
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"sync/atomic"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestPromise_Await(t *testing.T) {
@@ -16,10 +17,10 @@ func TestPromise_Await(t *testing.T) {
 	}
 
 	tests := []struct {
-		name          string
 		fields        fields
 		want          interface{}
 		expectedError error
+		name          string
 	}{
 		{
 			name: "return the value",
@@ -58,7 +59,6 @@ func TestPromise_Await(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-
 			p, err := New(tt.fields.ctx, tt.fields.runTask)
 			assert.NoError(t, err)
 

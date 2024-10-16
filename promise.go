@@ -241,10 +241,10 @@ func create[T any](ctx context.Context, task func() (T, error)) *Promise[T] {
 	return p
 }
 
-// singleResult is a type to store a single result from a promise while collecting results
+// singleResult is a type to store a single result from a promise while collecting results.
 type singleResult[T any] struct {
-	index int
 	value T
+	index int
 }
 
 // All collects all results from a list of promises and returns them in a slice of Promise.
@@ -296,7 +296,6 @@ func All[T any](ctx context.Context, promises ...*Promise[T]) (*Promise[[]T], er
 
 		return results, nil
 	})
-
 	if err != nil {
 		return nil, err
 	}
@@ -353,7 +352,6 @@ func Any[T any](ctx context.Context, promises ...*Promise[T]) (*Promise[T], erro
 		var r T
 		return r, fmt.Errorf("all promises failed")
 	})
-
 	if err != nil {
 		return nil, err
 	}

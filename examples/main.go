@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ulasakdeniz/go-typed-promise"
 	"io"
 	"net/http"
 	"time"
+
+	"github.com/ulasakdeniz/go-typed-promise"
 )
 
 func main() {
